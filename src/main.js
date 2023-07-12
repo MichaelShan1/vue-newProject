@@ -1,0 +1,20 @@
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store/index.js';
+import BaseCard from './component/BaseCard.vue';
+import BaseButton from './component/BaseButton.vue';
+import BaseBadge from './component/BaseBadge.vue';
+import ElementUI from 'element-plus/es/index';
+import 'element-plus/dist/index.css';
+import formCreate from '@form-create/element-ui';
+const app = createApp(App);
+app.use(router);
+app.use(store);
+app.use(ElementUI);
+app.use(formCreate);
+
+app.component('base-card', BaseCard);
+app.component('base-button', BaseButton);
+app.component('base-badge', BaseBadge);
+app.mount('#app');
