@@ -3,7 +3,7 @@
   <section>
     <base-card>
       <div class="controls">
-        <base-button mode="outline">刷新</base-button>
+        <base-button mode="outline" @click="loadCoaches">刷新</base-button>
         <base-button link to="/register">加入我们</base-button>
       </div>
       <ul v-if="hasCoach">
@@ -57,9 +57,15 @@ export default {
       return this.$store.getters['coaches/hasCoach'];
     },
   },
+  created() {
+    this.loadCoaches();
+  },
   methods: {
     filterList(data) {
       this.activeFilter = data;
+    },
+    loadCoaches() {
+      this.$store.dispatch('coaches/fetchCoach');
     },
   },
 };

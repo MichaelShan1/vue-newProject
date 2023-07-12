@@ -142,12 +142,6 @@ export default {
           ],
         },
       ],
-      option: {
-        //表单提交事件
-        onSubmit: function (formData) {
-          console.log(formData);
-        },
-      },
     };
   },
 
@@ -156,11 +150,11 @@ export default {
     submitForm() {
       //   this.validForm(); 提交前验证表单
       const formData = {
-        first: this.firstName,
-        last: this.lastName,
-        des: this.description,
-        rate: this.hourlyRate,
-        areas: this.areas,
+        first: this.firstName.val,
+        last: this.lastName.val,
+        des: this.description.val,
+        rate: this.hourlyRate.val,
+        areas: this.areas.val,
       };
       this.$emit('form-data', formData);
       this.$router.push({ path: '/' });
