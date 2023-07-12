@@ -35,10 +35,10 @@ export default {
       }
       this.$store.dispatch('requests/contactCoach', {
         email: this.email,
-        messsage: this.message,
+        message: this.message,
         coachId: '$this.route.params.id',
       });
-      this.$router.replace('/coaches');
+      this.$router.replace('/requests');
     },
   },
 };
